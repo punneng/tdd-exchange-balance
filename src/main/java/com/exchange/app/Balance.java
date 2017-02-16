@@ -10,9 +10,12 @@ public class Balance
   }
 
   private void exchange(int balance) {
-    int banknote500Amt = balance / 500;
+    int accumulatedResult = balance;
+    int banknote500Amt = accumulatedResult / 500;
     banknote.put(500, banknote500Amt);
-    banknote.put(100, 0);
+    accumulatedResult = balance - (banknote500Amt * 500);
+    int banknote100Amt = accumulatedResult / 100;
+    banknote.put(100, banknote100Amt);
     banknote.put(50, 0);
     banknote.put(20, 0);
     banknote.put(10, 0);
