@@ -15,6 +15,7 @@ public class Balance
   }
 
   private void exchange(int balance) {
+    // TODO: refactor with curry/composition pattern
     int accumulatedResult = this.exchangeBanknote(500, balance);
     accumulatedResult = this.exchangeBanknote(100, accumulatedResult);
     accumulatedResult = this.exchangeBanknote(50, accumulatedResult);
