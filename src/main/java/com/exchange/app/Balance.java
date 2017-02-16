@@ -22,7 +22,9 @@ public class Balance
     accumulatedResult = accumulatedResult - (banknote50Amt * 50);
     int banknote20Amt = accumulatedResult / 20;
     banknote.put(20, banknote20Amt);
-    banknote.put(10, 0);
+    accumulatedResult = accumulatedResult - (banknote20Amt * 20);
+    int banknote10Amt = accumulatedResult / 10;
+    banknote.put(10, banknote10Amt);
   }
 
   public int getBanknote(int banknote) {
