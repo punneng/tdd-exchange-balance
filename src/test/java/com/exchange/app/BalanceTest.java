@@ -28,4 +28,14 @@ public class BalanceTest
     {
         return new TestSuite( BalanceTest.class );
     }
+
+    public void testExchange500()
+    {
+        Balance balance = new Balance(500);
+        assertEquals( balance.getBanknote(500), 1);
+        assertEquals( balance.getBanknote(100), 0);
+        assertEquals( balance.getBanknote(50), 0);
+        assertEquals( balance.getBanknote(20), 0);
+        assertEquals( balance.getBanknote(10), 0);
+    }
 }
