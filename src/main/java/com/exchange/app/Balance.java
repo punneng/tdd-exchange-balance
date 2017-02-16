@@ -4,16 +4,18 @@ import java.util.HashMap;
 public class Balance
 {
   private HashMap<Integer, Integer> banknote = new HashMap<Integer, Integer>();
+
   public Balance( int balance )
   {
     this.exchange(balance);
   }
 
+  public int getBanknote(int banknote) {
+    return this.banknote.get(banknote);
+  }
+
   private void exchange(int balance) {
-    int accumulatedResult = balance;
-    int banknote500Amt = accumulatedResult / 500;
-    banknote.put(500, banknote500Amt);
-    accumulatedResult = accumulatedResult - (banknote500Amt * 500);
+    int accumulatedResult = this.exchangeBanknote(500, balance);
     int banknote100Amt = accumulatedResult / 100;
     banknote.put(100, banknote100Amt);
     accumulatedResult = accumulatedResult - (banknote100Amt * 100);
@@ -27,7 +29,10 @@ public class Balance
     banknote.put(10, banknote10Amt);
   }
 
-  public int getBanknote(int banknote) {
-    return this.banknote.get(banknote);
+  private int exchangeBanknote(int value, int balance) {
+    int amount = balance / value;
+    this.banknote.put(value, amount);
+    return balance - (amount * value);
   }
+
 }
