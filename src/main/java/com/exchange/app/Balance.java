@@ -19,7 +19,9 @@ public class Balance
     accumulatedResult = accumulatedResult - (banknote100Amt * 100);
     int banknote50Amt = accumulatedResult / 50;
     banknote.put(50, banknote50Amt);
-    banknote.put(20, 0);
+    accumulatedResult = accumulatedResult - (banknote50Amt * 50);
+    int banknote20Amt = accumulatedResult / 20;
+    banknote.put(20, banknote20Amt);
     banknote.put(10, 0);
   }
 
