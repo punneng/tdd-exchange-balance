@@ -16,9 +16,7 @@ public class Balance
 
   private void exchange(int balance) {
     int accumulatedResult = this.exchangeBanknote(500, balance);
-    int banknote100Amt = accumulatedResult / 100;
-    banknote.put(100, banknote100Amt);
-    accumulatedResult = accumulatedResult - (banknote100Amt * 100);
+    accumulatedResult = this.exchangeBanknote(100, accumulatedResult);
     int banknote50Amt = accumulatedResult / 50;
     banknote.put(50, banknote50Amt);
     accumulatedResult = accumulatedResult - (banknote50Amt * 50);
