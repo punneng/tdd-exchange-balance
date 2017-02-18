@@ -118,4 +118,14 @@ public class BalanceTest
         assertEquals( balance.getBanknote(20), 1);
         assertEquals( balance.getBanknote(10), 1);
     }
+
+    public void testExchange6()
+    {
+        Balance balance = new Balance(6);
+        assertEquals( balance.getBanknote(500), 0);
+        assertEquals( balance.getBanknote(100), 0);
+        assertEquals( balance.getBanknote(50), 0);
+        assertEquals( balance.getBanknote(20), 0);
+        assertEquals( balance.getBanknote(10), 0);
+    }
 }
