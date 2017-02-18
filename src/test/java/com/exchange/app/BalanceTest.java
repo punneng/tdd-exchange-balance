@@ -128,4 +128,10 @@ public class BalanceTest
         assertEquals( balance.getBanknote(20), 0);
         assertEquals( balance.getBanknote(10), 0);
     }
+
+    public void testgetBanknoteWithInvalidValue()
+    {
+        Balance balance = new Balance(50);
+        assertEquals( balance.getBanknote(1000), 0);
+    }
 }

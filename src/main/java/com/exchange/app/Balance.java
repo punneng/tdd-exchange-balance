@@ -11,7 +11,12 @@ public class Balance
   }
 
   public int getBanknote(int banknote) {
-    return this.banknote.get(banknote);
+    try {
+      return this.banknote.get(banknote);
+    } catch (NullPointerException e) {
+      return 0;
+    }
+
   }
 
   private void exchange(int balance) {
